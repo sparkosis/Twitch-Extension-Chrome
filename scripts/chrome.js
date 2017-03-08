@@ -1,0 +1,1 @@
+setInterval(updateIcon(), 5000);
