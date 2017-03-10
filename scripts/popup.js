@@ -2,39 +2,31 @@
 
 $(document).ready(function () {
 
-	var client_id = "s7vcz8pfgw4tlc3a873qwxmozuviklo";
-	var chaine = "firepandaa?client_id=" + client_id;
-	var title = "Firepandaa";
-	var url_api_statut = "https://api.twitch.tv/kraken/streams/"+chaine
-	var url_api_title = "https://api.twitch.tv/kraken/channel/"+chaine
-	var message = title + " est en ligne !";
+	var global_var = chrome.extension.getBackgroundPage();
+
+	var client_id = global_var.client_id;
+	var chaine = global_var.client_id;
+	var title = global_var.title;
+	var url_api_statut = global_var.url_api_statut;
+	var url_api_title = global_var.url_api_title;
+	var message = title + global_var.message;
 	var redirectUrl = "https://www.twitch.tv/" + title;
 
-	//Récupération du titre
+	//On charge le nom du streameur
+	$('#streameur').text(title);
 
-	var status = $.ajax({
-
-	})
 	$.ajax({
-		url:"/config.json",
+		url: url_api_title,
 		method: "GET",
 		success: function(resultat){
-			var obj=JSON.parse(resultat);
-			var client_id=obj.client_id;
-			var chaine=obj.chaine;
-			var title=obj.title;
-			var url_api_statut=obj.url_api_statut;
-			var url_api_title=obj.url_api_title;
-			var message=obj.message;
-			
-
-		}
-
+			//On set le jeu et le titre du live
+			$('#live-title').text(resultat.status);
+			$('#live-game').text(resultat.game);
 		},
-		{
 		error: function(error){
-			console.log('erreur:' + error);
+			console.log(error);
 		}
-	});
+	})
+
 
 });

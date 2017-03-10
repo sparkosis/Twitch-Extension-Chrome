@@ -8,11 +8,30 @@
     <!-- endbuild -->
     <!-- build:css styles/main.css -->
     <link href="styles/main.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.9/semantic.min.css">
     <!-- endbuild -->
   </head>
   <body>
-    <h1>'Allo, 'Allo!</h1>
 
+<div class="ui container">
+  <div class="ui tow column grid">
+    <div class="column">
+    <h1 id='streameur'></h1>
+    </div>
+    <div class="column right floated">
+      <p>Test</p>
+    </div>
+  </div>
+
+</div>
+  <div class="ui divider"></div>
+  <div class="ui container">
+    <div class="ui one colum grid">
+      <div class="column">
+      <p id='live-game'></p>
+      <p id='live-title'></p>
+      </div>
+    </div>
     <!-- build:js scripts/popup-vendor.js -->
     <!-- bower:js -->
     <!-- endbower -->
@@ -20,6 +39,7 @@
     <script src="scripts/jquery.js"></script>
     <!-- build:js scripts/popup.js -->
     <script src="scripts/popup.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.9/semantic.min.js"></script>
     <!-- endbuild -->
   </body>
 </html>

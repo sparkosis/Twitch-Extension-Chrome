@@ -9,9 +9,10 @@
   },
   "default_locale": "en",
   "background": {
+    "persistent": true,
     "scripts":[ "scripts/jquery.js", "scripts/parameters.js", "scripts/background.js", "scripts/chrome.js"]
   },
-  "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'",
+  "content_security_policy": "script-src 'self' 'unsafe-eval' https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.9/semantic.min.js; object-src 'self'",
   "permissions": [
     "notifications",
     "tabs",
